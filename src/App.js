@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
+import {Router, Switch, Route, Link} from 'react-router-dom';
+import History from './History';
+import Project from './Project';
+import Task from './Task';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+    render() {
+        window.onpopstate = () => {
+            window.location.reload();
+        }
+        return(
+            <Router history={History} forceRefresh={true}>
+                <Switch>
+                    <Route exact path='/' component={Project} />
+                    <Route path='/task' component={Task} />
+                </Switch>
+            </Router>
+        )
+    }
 }
 
 export default App;

@@ -1,0 +1,19 @@
+html, body, #root,#root div:only-child, .gantt-project-container {
+    height: 100%;
+
+}
+
+.today { 
+    background: #9de5f8 
+    !important;
+}
+
+.weekend { 
+    background: #7a3838 
+    !important;
+}
+
+.today_marker {
+    background: #8c8a8a
+    !important;
+}
